@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-cyan-400: #22d3ee;
+  --color-purple-500: #a855f7;
+  --color-dark-bg: #08090a;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-slate-300 font-sans antialiased selection:bg-cyan-400/30 selection:text-cyan-400;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-bg;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyan-400/20 rounded-full hover:bg-cyan-400/40 transition-colors;
+  }
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.neon-text-blue {
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+
+.neon-border-blue {
+  border-color: rgba(34, 211, 238, 0.3);
+}
+
+.code-bg {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 1) 0%, rgba(8, 9, 10, 1) 100%);
+}
+
+.code-container {
+  @apply border border-white/10 backdrop-blur-md;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 1) 0%, rgba(8, 9, 10, 1) 100%);
+}
+
+.terminal-header {
+  @apply flex items-center gap-1.5 px-6 py-4 border-b border-white/10 bg-white/5;
+}
+
+.terminal-dot {
+  @apply w-3 h-3 rounded-full;
+}
+
+.section-label {
+  @apply text-cyan-400 font-mono text-xs uppercase tracking-widest mb-2;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500;
+}
